@@ -1,0 +1,9 @@
+.stopwatch_contatiner, .stopwatch_row {
+    height: 100%
+}
+
+.stopwatch_col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
