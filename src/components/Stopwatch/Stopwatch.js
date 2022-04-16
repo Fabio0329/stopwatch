@@ -34,15 +34,30 @@ export const Stopwatch = () => {
     setIntervalId(0);
   };
 
+  const formatTime = () => {
+    const getSeconds = `0${count % 60}`.slice(-2);
+    const minutes = `${Math.floor(count / 60)}`;
+    const getMinutes = `0${minutes % 60}`.slice(-2);
+    const getHours = `0${Math.floor(count / 3600)}`.slice(-2);
+
+    return `${getHours} : ${getMinutes} : ${getSeconds}`;
+  };
+
   return (
     <Container className="stopwatch_contatiner">
       <Row className="stopwatch_row">
         <Col className="stopwatch_col">
-          <h1>{`00:00:${count}`}</h1>
+          <h1>{formatTime()}</h1>
           <div>
-            <Button onClick={startTimer}>Start</Button>
-            <Button onClick={pauseTimer}>Pause</Button>
-            <Button onClick={resetTime}>Reset</Button>
+            <Button onClick={startTimer} variant="success">
+              Start
+            </Button>
+            <Button onClick={pauseTimer} variant="danger">
+              Stop
+            </Button>
+            <Button onClick={resetTime} variant="secondary">
+              Reset
+            </Button>
           </div>
         </Col>
       </Row>
