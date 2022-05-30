@@ -1,4 +1,4 @@
-# Movie Info App
+# Stopwatch Component
 
 ![alt text](https://media.giphy.com/media/cDRCbCKTx0BkV8i2NQ/giphy.gif)
 
