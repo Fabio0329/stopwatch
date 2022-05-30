@@ -1,3 +1,4 @@
+// Modules
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -5,11 +6,13 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./Stopwatch.css";
 
+// Component that renders a stopwatch
 export const Stopwatch = () => {
   const [isActive, setIsActive] = useState(false);
   const [count, setCount] = useState(0);
   const [intervalId, setIntervalId] = useState(0);
 
+  // Function that starts the stopwatch
   const startTimer = () => {
     if (!isActive) {
       setIsActive(true);
@@ -20,6 +23,7 @@ export const Stopwatch = () => {
     }
   };
 
+  // Function that pasuses the stopwatch
   const pauseTimer = () => {
     if (isActive) {
       setIsActive(false);
@@ -27,6 +31,7 @@ export const Stopwatch = () => {
     }
   };
 
+  // Function that resets the stopwatch
   const resetTime = () => {
     clearInterval(intervalId);
     setIsActive(false);
@@ -34,6 +39,7 @@ export const Stopwatch = () => {
     setIntervalId(0);
   };
 
+  // Function that displays the time in a human readable format
   const formatTime = () => {
     const getSeconds = `0${count % 60}`.slice(-2);
     const minutes = `${Math.floor(count / 60)}`;
